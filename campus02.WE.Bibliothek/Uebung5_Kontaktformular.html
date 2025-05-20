@@ -1,0 +1,91 @@
+<!DOCTYPE html>	
+<html lang="de">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content ="width=device-width, initial-scale=1.0, user-scalable=yes">
+            <title>Kontaktformular - Virtuelle Bibliothek</title>
+            <!--hier wäre dann auch das style-sheet zu verlinken-->
+        </head>
+
+    <body>
+        <header>
+            <img width="70" src="https://cdn.pixabay.com/photo/2014/04/02/10/35/book-303927_1280.png" 
+            alt="Buch Logo">    
+            <h1>Kontaktformular</h1>
+            <p>Senden Sie uns eine Nachricht, wir helfen Ihnen gerne weiter!</p>
+        </header>
+    
+        <main>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <fieldset>
+
+                <label for="thema">Thema:</label>
+                <select id="thema" name="thema" required>
+                    <option value="" disabled selected> Bitte wählen Sie ein Thema</option>
+                    <option value="allgemein">Allgemeine Anfrage</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="problem">Problem</option>
+                    <option value="buchanfrage">Buchanfrage</option>
+                    <option value="marketingangelegenheiten">Marketingangelegenheiten</option>
+                    <option value="partnerschaftsanfrage">Partnerschaftsanfrage</option>
+                    <option value="technischer support">Technischer Support</option>
+                    <option value="datenschutzanfrage">Datenschutzanfrage</option>
+                    <option value="sonstiges">Sonstiges</option>
+                </select>
+                <br>
+
+                <label for="vorname">Vorname: </label>
+                <input type="text" id="vorname" name="vorname" minlength="2" maxlength="30" required><br>
+                
+                <label for="nachname">Nachname: </label>
+                <input type="text" id="nachname" name="nachname" minlength="2" maxlength="30" required><br>
+
+                <label for="email">Ihre e-Mail-Adresse: </label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="message">Ihre Nachricht 💬: </label>
+                <textarea id="message" name="message" rows="10" required></textarea><br>
+
+                <label for="anhang">Dateianhang: </label>
+                <input type="file" id="anhang" name="anhang" accept="image/*,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                <br><small>Erlaubte Dateitypen: Bilder, PDF, Word-Dokumente</small><br>
+                
+                <label for="zustimmung">
+                <input type="checkbox" id="zustimmung" name="zustimmung" value="ja">
+                Ich stimme der Verwendung meiner Kontaktdaten zu Marketingzwecken zu.
+                </label>
+                <br>
+
+                <button type="submit">Absenden 📬</button>
+            
+                </fieldset>
+            </form>
+
+
+            
+            
+
+
+            <p>Vielen Dank für Ihre Nachricht!</p>
+                
+           
+        </main>
+
+
+        <!-- Und der Footer -->
+        <footer>
+            <nav>
+                <ul>
+                    <li>Navigationsmenü</li>
+                    <li><a href="Uebung2_Bibliothek.html">Startseite</a></li>
+                    <li><a href="buecher.html">Bücher</a></li>
+                    <li><a href="Uebung4_Autorenseite.html">Autoren</a></li>
+                    <li><a href="Uebung5_Kontaktformular.html">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </footer>
+    
+    </body>
+</html>

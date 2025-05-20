@@ -1,0 +1,153 @@
+<!DOCTYPE html>	
+<html lang="de"> <!--Umschließt das gesamte Dokument. "Wurzelelemet"-->
+
+    <!--enthält Information ÜBER die Seite, die von Programmen 
+    wie Suchmachinen und Browsern ausgewertet werden-->
+    <head> 
+        <meta charset="UTF-8">
+        <!-- Viewport ist dafür da dass die Seite auch "ordentlich" auf Handys angezeigt wird-->
+        <!-- initial-scale: Inhalte werden 1:1 dargestellt, 
+         user-scalable: ob der Nutzer auf der Seite zoomen kann-->
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0, user-scalable=yes"> 
+        <title>Meine Bibliothek-Startseite aus Web-Entwicklung</title> <!-- wir im Tab angezeigt, Suchmaschinen verwenden ihn i.d.R. als Treffer-->
+    </head>
+
+    <body> <!--enthält die Info die vom Browser dargestellt wird-->
+
+        <header>
+            <img width="70" src="https://cdn.pixabay.com/photo/2014/04/02/10/35/book-303927_1280.png" 
+            alt="Buch Logo"> 
+            <h1>Willkommen in der virtuellen Bibliothek</h1>
+            <p>Hier finden Sie spannende Bücher aus den verschiedensten Kategorien.</p>
+        </header>
+    
+        <!-- ist optional und dient dazu, den Hauptinhalt der Seite zu markieren. 
+         Er hilft bei der Accessibility und SEO, indem er angibt, welche Inhalte für 
+         den Benutzer und Suchmaschinen am wichtigsten sind. -->
+        <main id="content"> 
+
+            <!-- als Inhaltsabschnitt definiert, der eine gemeinsame Bedeutung 
+             hat, mit semantischer Bedeutung -->
+            <section class="book-section">
+                <h3>Unsere Bücher:</h3>
+
+
+                <!--Ein Article stellt einen selbstständigen Inhalt dar, 
+                der für sich genommen eine vollständige Bedeutung hat..-->
+                <article>
+
+                    <!-- wird für generische Container und Layoutzwecke verwendet, ohne semantische Bedeutung.
+                    Es dient nur zur Gruppierung und zum Styling.  -->
+                    <div class="book">
+
+                        <h2> "Der Herr der Ringe" - J.R.R. Tolkien</h2>
+                        <br>
+                        <img width="240" src="https://images2.medimops.eu/product/1310df/M03608952128-440px.webp" 
+                        alt="Cover von Der Herr der Ringe">
+                        <br>
+                        
+                        <!-- Blockquote ist da um einen längeren Textabschnitt als Zitat aus einer 
+                        anderen Quelle zu kennzeichnen-->
+                        <blockquote>
+                            <pre>"Nicht alle die wandern, sind verloren."</pre>
+                        </blockquote>
+                        <br>
+
+                        <!--enthält Informationen, die in einem indirekten Zusammenhang zum Hauptinhalt stehen.
+                        Bsp: Seitennavigation, Werbung, Werbungsbanner oder Fußnoten.
+                        Also eigentlich passt das hier nicht so gut.  -->
+                        <aside>Der Herr der Ringe ist ein Literaturklassiker und umfasst drei Bände.<br>
+                        John Ronald Reuel Tolkien, bekannt als J.R.R. Tolkien, war ein britischer Schriftsteller, Philologe
+                        und Hochschullehrer. Er wurde am 3. Januar 1892 in Bloemfontein, Südafrika, geboren und
+                        verstarb am 2. September 1973 in Bournemouth, England.</aside>
+                        <br>
+
+                        <div class="book-links">
+                            <a href="https://de.wikipedia.org/wiki/Der_Herr_der_Ringe" target="_blank"
+                            >Der Herr der Ringe auf Wiki</a> <!-- target blank weist den Browser an, eine neue Seite für den Link zu öffnen-->
+                        </div>
+                        <br>
+                    </div>
+                </article>
+
+                <!--2. Buch -->
+                <article>
+                    
+                    <div class="book">
+
+                        <h2> "Harry Potter und der Stein der Weisen" - J.K.Rowling</h2>
+                        <br>
+                        <img width="240" src="https://images.thalia.media/-/BF2000-2000/df3ee70551004435acf1d81ee629c5d3/harry-potter-und-der-stein-der-weisen-taschenbuch-j-k-rowling.jpeg" 
+                        alt="Cover von Harry Potter und der Stein der Weisen">
+                        <br>
+                        
+                        <blockquote>
+                            <pre>"Es sind unsere Entscheidungen, Harry, die zeigen, wer wir wirklich sind, weit mehr als
+                                unsere Fähigkeiten."</pre>
+                        </blockquote>
+                        <br>
+
+                        <aside>Harry Potter ist ein Buch für Jugendliche & junge Erwachsene. Insgesamt gibt es 7 Harry Potter-Bände. 
+                        Dieses hier ist das erste Abenteuer vom jungen Zauberlehrling.<br>
+                        J.K. Rowling ist eine britische Schriftstellerin, die weltweit bekannt wurde durch ihre Harry Potter
+                        Buchreihe. Sie wurde am 31. Juli 1965 in Yate, Gloucestershire, England, geboren. Ihr erster
+                        Roman "Harry Potter und der Stein der Weisen" wurde 1997 veröffentlicht und startete eine der
+                        erfolgreichsten Buchreihen aller Zeiten.</aside>
+                        <br>
+                        
+                        <div class="book-links">
+                            <a href="https://de.wikipedia.org/wiki/Harry_Potter_und_der_Stein_der_Weisen" target="_blank"
+                            > Harry Potter & der Stein der Weisen auf Wiki</a>
+                        </div>
+                        <br>
+                    </div>
+                </article>
+
+                <!--3. Buch -->
+                <article> 
+                    <div class="book">
+                        <h2> "Die Schatzinsel" - Robert Louis Stevenson</h2>
+                        <br>
+                        <img width="240" src="https://images.thalia.media/-/BF2000-2000/5cc11c47932c4d398a82bd507365bee5/die-schatzinsel-vollstaendige-ausgabe-gebundene-ausgabe-robert-louis-stevenson.jpeg" 
+                        alt="Cover von Die Schatzinsel">
+                        <br>
+
+                        <blockquote>
+                            <pre>"Kein Schatz auf Erden und kein Glück kann mit einem Freund verglichen werden, der uns
+                            in schweren Zeiten beisteht."</pre>
+                        </blockquote>
+                        <br>
+
+                        <aside>Die Schatzinsel ist ein Buch für junge Leser.<br>
+                        Robert Louis Stevenson war ein schottischer Schriftsteller, der für Abenteuerromane wie "Die
+                        Schatzinsel" und "Dr. Jekyll und Mr. Hyde" bekannt ist. Er wurde am 13. November 1850 in
+                        Edinburgh, Schottland, geboren und verstarb am 3. Dezember 1894 in Vailima, Samoa.</aside>
+                        <br>
+
+                        <div class="book-links">
+                            <a href="https://de.wikipedia.org/wiki/Die_Schatzinsel" target="_blank"
+                            >Die Schatzinsel auf Wiki</a>
+                        </div>
+                        <br>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+
+        <!-- Und der Footer -->
+        <footer>
+            <nav>
+                <h3>Navigationsmenü</h3>
+                <ul>
+                    <li><a href="Uebung2_Bibliothek.html">Startseite</a></li>
+                    <li><a href="buecher.html">Bücher</a></li>
+                    <li><a href="Uebung4_Autorenseite.html">Autoren</a></li>
+                    <li><a href="Uebung5_Kontaktformular.html">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </footer>
+    
+    </body>
+</html>
