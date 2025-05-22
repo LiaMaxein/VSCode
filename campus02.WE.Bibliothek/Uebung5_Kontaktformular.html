@@ -18,7 +18,7 @@
     
         <main>
             <form action="#" method="post" enctype="multipart/form-data">
-                <fieldset>
+                <fieldset> <!-- gruppiert  zusammengehörige Formularelemente, mehrere Input-Felder logisch zusammenfassen-->
 
                 <label for="thema">Thema:</label>
                 <select id="thema" name="thema" required>
@@ -35,8 +35,8 @@
                 </select>
                 <br>
 
-                <label for="vorname">Vorname: </label>
-                <input type="text" id="vorname" name="vorname" minlength="2" maxlength="30" required><br>
+                <label for="vorname">Vorname: </label> <!-- dieses Label hängt mit der id ? zusammen-->
+                <input type="text" id="vorname" name="vorname" minlength="2" maxlength="30" required><br> <!-- name ist wichtig weil die inhalte mit diesem namen als keyvalue an die action übermittelt werden-->
                 
                 <label for="nachname">Nachname: </label>
                 <input type="text" id="nachname" name="nachname" minlength="2" maxlength="30" required><br>
