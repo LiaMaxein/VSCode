@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mustermann Baumarkt</title>
+    <!-- Bootstrap CSS einbinden -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        .bg-rabatt {
+            background-image: url('/Users/lia_mxn/Downloads/bootstrap-01/musterman-garten.png');
+            background-size: cover;
+            background-position: center;
+            color: white; /* Textfarbe weiß */
+        }
+
+        .hero-text-overlay {
+            background-color: rgba(255, 255, 255, 0.8); /* weißer, halbtranspareter Hintergrund */
+            padding: 3rem;
+            border-radius: 0.3rem; /* abgerundete Ecken */
+            color: #333 /* Textfarbe für den Overlay-Bereich */
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav calss="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+             <a class="navbar-brand" href="#">Mustermann Baumarkt</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page"  href="#">Startseite</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Werkzeuge</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Baumaterial</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Elektro</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Garten</a></li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input type="search" placeholder="Produkte suchen...">
+                <button type="submit">Suchen</button>
+            </form>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero-Bereich -->
+        <div>
+            <div class="bg-rabatt">
+                <h1>Frühjahrsrabatt: 20% auf alle Gartengeräte!</h1>
+                <p>
+                    Bereiten Sie Ihren Garten auf den Frühling vor mit hochwertigen Werkzeugen
+                    und Geräten von Mustermann Hardware. Jetzt mit Sonderrabatt auf das gesamte Garten-Sortiment.
+                </p>
+                <button>Angebote entdecken</button>
+            </div>
+        </div>
+
+        <!-- Aktuelle Angebote -->
+        <div>
+            <h2>Aktuelle Angebote</h2>
+            <div>
+                <div>
+                    <img src="bohrmaschine.png" alt="Bohrmaschine">
+                    <div>
+                        <h5>Akku-Bohrschrauber</h5>
+                        <p>Profi-Bohrschrauber mit 2 Akkus und Koffer</p>
+                        <p>€99,99 <span>€129,99</span></p>
+                        <a href="#">In den Warenkorb</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="werkzuegkoffer.png" alt="Werkzeugset">
+                    <div>
+                        <h5>Werkzeugkoffer, 215-tlg.</h5>
+                        <p>Komplettset mit Schraubendreher, Zangen und mehr</p>
+                        <p>€149,99 <span>€199,99</span></p>
+                        <a href="#">In den Warenkorb</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="rasenmaeher.png" alt="Rasenmäher">
+                    <div>
+                        <h5>Benzin-Rasenmäher</h5>
+                        <p>Mit Radantrieb und 50L Fangkorb</p>
+                        <p>€279,99 <span>€349,99</span></p>
+                        <a href="#">In den Warenkorb</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="wandfarbe.png" alt="Farbe">
+                    <div>
+                        <h5>Wandfarbe, 10L</h5>
+                        <p>Hochwertige Dispersionsfarbe, verschiedene Farbtöne</p>
+                        <p>€39,99 <span>€49,99</span></p>
+                        <a href="#">In den Warenkorb</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <div>
+                <h5>Mustermann Hardware</h5>
+                <small>&copy; 2022-2025</small>
+            </div>
+            <div>
+                <h5>Filialen</h5>
+                <ul>
+                    <li><a href="#">Wien</a></li>
+                    <li><a href="#">Graz</a></li>
+                    <li><a href="#">Linz</a></li>
+                    <li><a href="#">Salzburg</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Service</h5>
+                <ul>
+                    <li><a href="#">Beratung</a></li>
+                    <li><a href="#">Werkzeugverleih</a></li>
+                    <li><a href="#">Gerätewartung</a></li>
+                    <li><a href="#">Holzzuschnitt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Über uns</h5>
+                <ul>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Geschichte</a></li>
+                    <li><a href="#">Karriere</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

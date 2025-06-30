@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font: 100% Lucida Sans, Verdana;
+    margin: 1em;
+}
+
+/*
+#top {
+    background-color: green;
+    color: white;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+*/
+
+header {
+    background-color: rgb(77, 211, 77);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    border-radius: 5px;
+    padding: 0.5rem 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 1.5rem;
+    
+}
+
+/* Cascading Style Sheets */
+
+main {
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: auto;
+    background-color: white;
+    padding: 20px;
+    margin-left: 20px;
+    
+}
+
+/* Cascading Style Sheets */
+main h1 {
+    color: black;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+/* Grundlagen */
+main h2 {
+    color: black;
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+main p {
+    line-height: 1.6;
+    color: black;
+}
+
+/* Zitat */
+main div {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: black;
+}
+
+/* alles was in der mittleren Ebene steht */
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 20px
+}
+
+nav {
+    width: 180px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    flex-shrink:0 ;
+}
+
+#menulist {
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+}
+
+.menuitem {
+    padding: 10px 15px;
+    background-color: lightgrey;
+    border: 1px solid darkgrey;
+    /* Absatnd zwischen den Menüpunkten */
+    margin-bottom: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+    /* weil es cool aussieht */
+    box-shadow: 1px 1px 3px lightgreen;
+    border-radius: 5px;
+}
+
+.menuitem:hover {
+    /* pink weil es cooler ist als grün  */
+    background-color: pink;
+}
+
+/* Aside-Side Bar */
+aside {
+    width: 250px;
+    background-color: rgb(33, 128, 236);
+    padding: 1.5rem;
+    margin-left: 20px;
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    color: white;
+    flex-shrink: 20;
+}
+
+/* Side Bar Überschrift */
+aside h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+}
+
+aside p {
+    line-height: 1.6;
+    font-size: 0.9em;
+}
+
+nav, aside, main {
+    flex: 0.5 0 0.5;
+}
+
+footer {
+    background-color: lightgrey;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border: 1px solid darkgrey;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: black;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}

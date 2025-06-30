@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <!-- Die VS Code Live Preview-Skriptzeile wurde entfernt, da sie nicht für den allgemeinen Betrieb erforderlich ist. -->
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript & API & DOM</title>
+        <style>
+            /* Custom CSS for a better look */
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: #f0f4f8; /* Light gray background */
+                color: #333;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .container {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                max-width: 800px;
+                width: 100%;
+            }
+            h1 {
+                color: #1a202c; /* Darker heading color */
+                margin-bottom: 20px;
+                font-size: 2.25rem; /* text-4xl */
+                font-weight: bold;
+                text-align: center;
+            }
+            p {
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+            a {
+                color: #3182ce; /* Blue link color */
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            a:hover {
+                color: #2b6cb0; /* Darker blue on hover */
+            }
+            ul {
+                list-style-type: none; /* Remove default bullet points */
+                padding: 0;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            ul li {
+                background-color: #e2e8f0; /* Light gray for list items */
+                margin-bottom: 8px;
+                padding: 10px 15px;
+                border-radius: 8px;
+                transition: background-color 0.3s ease;
+            }
+            ul li:hover {
+                background-color: #cbd5e0; /* Slightly darker on hover */
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 12px 15px;
+                margin-bottom: 20px;
+                border: 1px solid #cbd5e0; /* Light gray border */
+                border-radius: 8px;
+                font-size: 1rem;
+                box-sizing: border-box; /* Include padding in width */
+                transition: border-color 0.3s ease;
+            }
+            input[type="text"]:focus {
+                outline: none;
+                border-color: #4299e1; /* Blue border on focus */
+                box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Blue shadow on focus */
+            }
+
+            /* NEU: Styles für die Produktanzeige */
+            .search-box {
+                display: flex;
+                gap: 10px; /* Abstand zwischen Input und Button */
+                margin-bottom: 20px;
+            }
+            .search-box input {
+                flex-grow: 1; /* Input nimmt den meisten Platz ein */
+            }
+            .search-box button {
+                padding: 12px 20px;
+                background-color: #4299e1; /* Blue button */
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .search-box button:hover {
+                background-color: #2b6cb0; /* Darker blue on hover */
+            }
+
+            #loading {
+                text-align: center;
+                padding: 10px;
+                font-weight: bold;
+                color: #4299e1;
+            }
+            #errorMessage {
+                text-align: center;
+                padding: 10px;
+                font-weight: bold;
+                color: red;
+            }
+
+            .products {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsives Grid */
+                gap: 20px; /* Abstand zwischen den Produktkarten */
+                padding: 20px 0;
+            }
+
+            .product {
+                background-color: #e2e8f0; /* Light gray for product cards */
+                border-radius: 12px;
+                padding: 15px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            }
+            .product:hover {
+                transform: translateY(-5px); /* Kleiner "Lift"-Effekt beim Hover */
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            }
+            .product img {
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+            .product h3 {
+                font-size: 1.25rem; /* text-xl */
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #2d3748;
+            }
+            .product .category {
+                font-size: 0.85rem;
+                color: #4a5568;
+                margin-bottom: 5px;
+            }
+            .product .price {
+                font-size: 1.1rem;
+                font-weight: bold;
+                color: #2f855a; /* Green for price */
+                margin-top: auto; /* Preis am unteren Rand ausrichten */
+            }
+            .product .description {
+                font-size: 0.9rem;
+                color: #718096;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container" id="container">
+            <h1>Produktkatalog</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Produkt suchen...">
+                <button id="loadButton">Produkte laden</button>
+            </div>
+            <div id="loading" style="display: none;">Lade Produkte...</div>
+            <div id="errorMessage" style="display: none; color: red;"></div>
+            <div class="products" id="productContainer"></div>
+        </div>
+        <script src="script.js" defer></script>
+    </body>
+</html>

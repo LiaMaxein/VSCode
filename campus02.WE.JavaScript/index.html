@@ -1,0 +1,105 @@
+<!DOCTYPE html>	
+<html lang="de">
+    <head>
+        <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+        <meta charset="UTF8"/>
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+        <title>JavaScript Versuch</title>
+        <style>
+                /* Custom CSS for a better look */
+                body {
+                    font-family: 'Inter', sans-serif;
+                    background-color: #f0f4f8; /* Light gray background */
+                    color: #333;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 20px;
+                }
+                .container {
+                    background-color: #fff;
+                    padding: 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    max-width: 800px;
+                    width: 100%;
+                }
+                h1 {
+                    color: #1a202c; /* Darker heading color */
+                    margin-bottom: 20px;
+                    font-size: 2.25rem; /* text-4xl */
+                    font-weight: bold;
+                    text-align: center;
+                }
+                p {
+                    line-height: 1.6;
+                    margin-bottom: 15px;
+                }
+                a {
+                    color: #3182ce; /* Blue link color */
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                }
+                a:hover {
+                    color: #2b6cb0; /* Darker blue on hover */
+                }
+                ul {
+                    list-style-type: none; /* Remove default bullet points */
+                    padding: 0;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                ul li {
+                    background-color: #e2e8f0; /* Light gray for list items */
+                    margin-bottom: 8px;
+                    padding: 10px 15px;
+                    border-radius: 8px;
+                    transition: background-color 0.3s ease;
+                }
+                ul li:hover {
+                    background-color: #cbd5e0; /* Slightly darker on hover */
+                }
+                input[type="text"] {
+                    width: 100%;
+                    padding: 12px 15px;
+                    margin-bottom: 20px;
+                    border: 1px solid #cbd5e0; /* Light gray border */
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    box-sizing: border-box; /* Include padding in width */
+                    transition: border-color 0.3s ease;
+                }
+                input[type="text"]:focus {
+                    outline: none;
+                    border-color: #4299e1; /* Blue border on focus */
+                    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Blue shadow on focus */
+                }
+            </style>
+        </head>
+
+    <body>
+            <div class="container" id="container">
+                <h1 class="text-4xl font-bold mb-8">JavaScript Versuch</h1>
+                <p class="text-lg leading-relaxed mb-6">Dies ist ein Absatz mit Text.</p>
+
+                <p class="mb-6">
+                    <a href="https://wikitravel.org/de/Koblenz" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                        Klicke hier, um mehr über Koblenz zu erfahren! &#10084;&#65039;&#8205;&#128293;
+                    </a>
+                </p>
+
+                <ul class="list-none p-0 mb-6 space-y-2">
+                    <li class="bg-blue-100 p-3 rounded-lg shadow-sm hover:bg-blue-200 transition duration-300">Startseite</li>
+                    <li class="bg-blue-100 p-3 rounded-lg shadow-sm hover:bg-blue-200 transition duration-300">Reisetipps für Koblenz</li>
+                    <li class="bg-blue-100 p-3 rounded-lg shadow-sm hover:bg-blue-200 transition duration-300">Kontakt</li>
+                    <li class="bg-blue-100 p-3 rounded-lg shadow-sm hover:bg-blue-200 transition duration-300">Impressum</li>
+                </ul>
+
+                <h1 class="text-3xl font-semibold mb-6">Produktliste</h1>
+                <input type="text" id="searchInput" placeholder="Produkte suchen..." class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <ul id="productList" class="list-none p-0 space-y-2"></ul>
+            </div>
+        <script src="script.js" defer></script>
+    
+    </body>
+</html>
