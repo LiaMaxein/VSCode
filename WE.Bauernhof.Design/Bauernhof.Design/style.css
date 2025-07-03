@@ -5,26 +5,36 @@ body {
     box-sizing: border-box;
     background-color: #ffffff;
     color: #000000;
+
+    /* for a fine frame around the whole website - just like in the pictures */
+    border: 1px solid #2d5016;
 }
 
 .main-header {
-    background-color: #2d5016; /* Green header */
+    border: 1px solid #2d5016; /* a fine darker green frame */
+    background-color: #507c3a; /* Green header */
     color: #ffffff;
     text-align: center;
-    padding: 15px 0;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 0.7em;
+    padding: 0px 0;
+    font-weight: normal;
+
 }
 
 .hero-section {
     background-image: url('./hero_fullsize.jpg'); /* Background farm image */
+    height: 550px;
     background-size: cover;
     background-position: center;
     color: #ffffff;
-    text-align: center;
-    padding: 100px 20px;
+    padding: 0;
     position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .hero-section::before {
     content: '';
@@ -33,31 +43,37 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+    width: 100%; /* to make sure, it does take the full width of it's parent (.hero-section) */
+    text-align: center;
 }
 
 .hero-content h2 {
     font-size: 2.5em;
     margin: 0;
     line-height: 1.2;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    padding: 20px 0px; /* 20 bottom & top, 0 left & right */
+    font-weight: 550;
+    text-align: center;
+    display: block; /*so that the background only covers the text */
 }
 
 .main-container {
     display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
+    max-width: 1800px;
+    margin: 0px auto;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar {
     width: 250px;
-    background-color: #2d5016; /* Darker green sidebar */
+    background-color:#507c3a; /* Darker green sidebar */
     padding: 20px 0;
     box-sizing: border-box;
     color: #ffffff;
@@ -67,32 +83,35 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .sidebar nav ul li a {
-    display: block;
-    padding: 15px 20px;
+    display: inline-block;
+    padding: 12px 40px;
     color: #ffffff;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    max-width: 90%;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a.active {
-    background-color: #a8dba8; /* Lighter green on hover/active */
+.sidebar nav ul li a:hover {
+    background-color: #a8dba8; /* Lighter green on hover */
 }
 
 .content-area {
     flex-grow: 1;
-    padding: 20px;
+    padding: 13px;
 }
 
 .about-us h3,
 .our-products h3 {
-    color: #2d5016;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    color: #507c3a;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .product-grid {
@@ -103,11 +122,11 @@ body {
 }
 
 .product-item {
-    border: 1px solid #ddd;
+    border: 1px solid #cccccc; /* a fine gray frame */
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
-    padding: 15px;
+    padding: 0px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
@@ -121,12 +140,14 @@ body {
 
 .product-item h4 {
     margin-top: 0;
-    color: #333;
+    color: #507c3a;
+    margin-bottom: 0;
+
 }
 
 .product-item p {
     font-size: 0.9em;
-    color: #666;
+    color: black
 }
 
 .main-footer {
@@ -134,28 +155,47 @@ body {
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .main-footer .footer-links a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 15px;
+    display: block;
+    margin: 10px 15px; /* for vertical spacing */
     transition: color 0.3s ease;
 }
 
 .main-footer .footer-links a:hover {
-    color: #eee;
+    background-color: #a8dba8; /* lightgreen for hover-effect */
+    color: #ffffff; /* text color to white */
 }
 
 .main-footer p {
     margin-top: 10px;
     font-size: 0.9em;
+    color: black /* for "Kontaktieren sie uns..." */
 }
 
 .main-footer a {
-    color: #ffffff;
+    color: black;
     text-decoration: underline;
+}
+
+.mobile-break {
+    display: none; /* invisibile for bigger screens */
+}
+
+.mobile-break-h1 {
+    display: none;
+}
+
+.mobile-break-h2 {
+    display: none;
+}
+
+.desktop-break-h2 {
+    display: none
 }
 
 /* Responsive adjustments */
@@ -171,12 +211,21 @@ body {
 
     .sidebar nav ul {
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .sidebar nav ul li {
+        width: 100%;
     }
 
     .sidebar nav ul li a {
-        padding: 10px 15px;
-        text-align: center;
+        padding: 10px 20px;
+        white-space: nowrap;
+        display: block;
+        width: 30%;
+        text-align: left;
     }
 
     .hero-content h2 {
@@ -186,4 +235,29 @@ body {
     .product-grid {
         grid-template-columns: 1fr; /* Stack products on small screens */
     }
+
+    .mobile-break {
+        display: block; /* to achieve a break on smaller screens */
+    }
+
+    .mobile-break-h1 {
+        display: block;
+    }
+
+    .mobile-break-h2 {
+        display: block;
+    }
+
+    .desktop-break-h2 { 
+        display: none; /* to make sure it's invisible on mobile screens */
+    }
+
+   
+}
+
+ @media (min-width: 769px) {
+    .desktop-break-h2 {
+        display: block; /* if the screen is bigger than 768px - to make sure there is a break */
+    }
+
 }
