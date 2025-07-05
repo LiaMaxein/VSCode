@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Das kleine Glück - Briefkasten</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Das kleine Glück Logo">
+                <span>Das kleine Glück</span>
+            </div>
+            <nav>
+                <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="kalender.html">Kalender</a></li>
+                    <li><a href="briefkasten.html" class="active">Briefkasten</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="content-section">
+            <h1>Dein Briefkasten für nette Grüße</h1>
+            <p>Hinterlasse eine liebe Nachricht für mich oder andere Besucher dieser Seite! Ein kleines Glück für zwischendurch.</p>
+
+            <form class="guestbook-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="guestName">Dein Name (optional):</label>
+                    <input type="text" id="guestName" name="guestName">
+                </div>
+                <div class="form-group">
+                    <label for="guestMessage">Deine Nachricht:</label>
+                    <textarea id="guestMessage" name="guestMessage" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="button">Nachricht abschicken</button>
+            </form>
+
+            <div class="guestbook-entries">
+                <h2>Was andere sagen:</h2>
+                <article class="guestbook-entry">
+                    <p class="guestbook-message">"Wunderschöne Website! Graz ist wirklich eine Reise wert. Danke für die tollen Tipps!"</p>
+                    <p class="guestbook-meta">- Ein begeisterter Besucher (01. Juli 2025)</p>
+                </article>
+                <article class="guestbook-entry">
+                    <p class="guestbook-message">"Liebe Grüße aus der Ferne! Freue mich schon auf das nächste Mal in Graz."</p>
+                    <p class="guestbook-meta">- Anna M. (28. Juni 2025)</p>
+                </article>
+                </div>
+
+            <hr class="separator">
+
+            <h2>Sende ein echtes kleines Glück!</h2>
+            <p>Möchtest du einem lieben Menschen eine besondere Freude machen? Kaufe eine Postkarte und schicke eine persönliche Nachricht direkt aus Graz!</p>
+            <p>
+                <a href="https://www.sendoutcards.com/de/shop/" target="_blank" class="button">
+                    <i class="fas fa-paper-plane"></i> Postkarte kaufen & senden
+                </a>
+            </p>
+            <p class="small-text">Dieser Link führt zu einem externen Partner (z.B. SendOutCards) für den Postkartenversand.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Das kleine Glück. Alle Rechte vorbehalten.</p>
+            <p><a href="impressum.html">Impressum</a></p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

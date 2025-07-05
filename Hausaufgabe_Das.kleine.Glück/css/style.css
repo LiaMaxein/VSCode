@@ -1,0 +1,724 @@
+/* Grundlegende Stildefinitionen */
+:root {
+    --header-footer-bg: #EAE0C8; /* Beige-Ton für Header/Footer (ähnlich Ei-Schale) */
+    --body-bg: #FFFBF0; /* Sonniges Eierfarbenschalen-Ton (fast weiß) */
+    --primary-heading-color: #2E8B57; /* Dunkleres Grün für Überschriften */
+    --text-color: #333333;
+    --link-color: #4CAF50; /* Grün für Links */
+    --link-hover-color: #FF7043; /* Akzentfarbe für Hover (z.B. ein sanftes Orange) */
+    --button-bg: #4CAF50;
+    --button-hover-bg: #388E3C;
+    --border-color: #cccccc;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Etwas stärkerer Schatten */
+    --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stärkerer Hover-Schatten */
+    --white: #ffffff; /* Diese Variable fehlte */
+    --light-bg: #f9f9f9; /* Diese Variable fehlte, für Event/Form Hintergrund */
+}
+
+/* Dezent blumiges Muster für Header/Footer - Dies ist ein Platzhalter */
+/* Du müsstest ein Hintergrundbild erstellen und hier einfügen: */
+/* --flower-pattern: url('../images/flower-pattern.png'); */
+
+
+/* Grundlayout */
+body {
+    font-family: Arial, sans-serif; /* Calibri Light ist eine Systemschrift, Arial ist eine gute Web-Alternative */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, 'Times New Roman', serif; /* Beibehaltene Schriftart */
+    color: var(--primary-heading-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover,
+a:focus {
+    color: var(--link-hover-color);
+}
+
+/* Header */
+header {
+    background-color: var(--header-footer-bg);
+    /* background-image: var(--flower-pattern); */ /* Entkommentieren und Pfad anpassen */
+    background-repeat: repeat;
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem; /* Etwas größer für mehr Präsenz */
+    font-weight: bold;
+    color: var(--primary-heading-color);
+    font-family: Georgia, serif;
+}
+
+.logo img {
+    height: 50px; /* Größe des Logos anpassen */
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation */
+nav {
+    position: relative; /* Für Hamburger-Menü */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--link-hover-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Hamburger-Menü für Mobilgeräte */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary-heading-color);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+
+/* Buttons */
+.button {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Hauptinhaltsbereich */
+main {
+    padding: 2.5rem 0;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-heading-color) 0%, #6ab04c 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 2rem;
+    margin-bottom: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--white); /* Weiß für Hero-Überschrift */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+}
+
+.content-section {
+    background-color: var(--white);
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Blog-Vorschauen auf der Startseite */
+.latest-blog-posts {
+    text-align: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.blog-preview {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-preview:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.blog-preview a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.blog-preview-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(70%); /* Leichte Abdunklung */
+    transition: filter 0.3s ease;
+}
+
+.blog-preview:hover .blog-preview-image img {
+    filter: brightness(100%); /* Volle Farbe beim Hover */
+}
+
+.blog-preview h3 {
+    padding: 15px 15px 5px;
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--primary-heading-color);
+}
+
+.blog-preview p {
+    padding: 0 15px 15px;
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Karte */
+#map-section {
+    margin-top: 40px;
+}
+#map {
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 0.3s ease; /* Hover für Karte optional */
+}
+#map:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+/* Kalenderseite */
+.event-list {
+    margin-top: 30px;
+}
+
+.event-item {
+    background-color: var(--light-bg);
+    border-left: 5px solid var(--primary-heading-color);
+    padding: 1.5rem;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+.event-item h3 {
+    margin-top: 0;
+    color: var(--primary-heading-color);
+}
+
+.event-item p {
+    margin-bottom: 5px;
+}
+
+/* Briefkasten (Gästebuch/Formular) */
+.guestbook-form, .contact-form {
+    margin-top: 30px;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-heading-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--link-hover-color);
+    box-shadow: 0 0 0 3px rgba(255,112,67,0.2); /* Sanfter Fokus-Schatten */
+    outline: none;
+}
+
+.guestbook-entries {
+    margin-top: 40px;
+}
+
+.guestbook-entry {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guestbook-entry:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.guestbook-message {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.guestbook-meta {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: right;
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 40px 0;
+}
+
+.small-text {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+
+/* Galerie-Übersicht */
+.gallery-album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.album-cover-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.album-cover {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album-cover:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--hover-shadow);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 250px; /* Einheitliche Höhe für Album-Cover */
+    object-fit: cover;
+    display: block;
+    filter: brightness(75%); /* Leichte Abdunklung */
+    transition: filter 0.3s ease;
+}
+
+.album-cover:hover img {
+    filter: brightness(100%); /* Volle Farbe beim Hover */
+}
+
+.album-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    color: var(--white);
+    padding: 15px;
+    text-align: center;
+}
+
+.album-overlay h3 {
+    margin: 0;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+/* Galerie-Detailseite (für einzelne Alben) */
+.gallery-detail-page h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: var(--primary-heading-color);
+    font-size: 2.5em;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsives Raster */
+    gap: 25px;
+    padding: 20px 0;
+    justify-content: center; /* Zentriert die Grid-Items */
+}
+
+.gallery-item {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    display: flex; /* Für Flexbox innerhalb des Items */
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow);
+}
+
+.gallery-item a {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Link füllt das gesamte Item aus */
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px; /* Feste Höhe für Thumbnails auf Detailseiten */
+    object-fit: cover; /* Bilder proportional zuschneiden und Kanten füllen */
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px; /* Optional: abgerundete Ecken für Einzelbilder */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Hinzugefügt, damit es konsistent ist */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03); /* Leichter Zoom-Effekt */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Stärkerer Schatten beim Hover */
+}
+
+.gallery-item .caption {
+    padding: 15px 10px;
+    font-weight: 600;
+    color: var(--text-color); /* Nutze die Variable */
+    font-size: 1.1em;
+    flex-grow: 1; /* Nimmt verfügbaren Platz ein */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Blog Detail Seite */
+.blog-post-detail .blog-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.blog-post-detail .blog-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.blog-post-detail .blog-meta {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.blog-post-detail p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.blog-post-detail h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-detail ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post-detail ul li {
+    margin-bottom: 8px;
+}
+
+.blog-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.blog-images-grid img {
+    width: 100%;
+    height: 200px; /* Einheitliche Höhe für Blog-Bilder */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-images-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--hover-shadow);
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--header-footer-bg);
+    /* background-image: var(--flower-pattern); */ /* Entkommentieren und Pfad anpassen */
+    background-repeat: repeat;
+    color: var(--text-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: var(--link-color);
+    font-weight: normal;
+}
+footer a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Allgemeine Barrierefreiheit und Fokus-Indikatoren */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid var(--link-hover-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+
+/* Responsive Styles (für Hamburger-Menü und allgemeine Anpassungen) */
+@media (max-width: 900px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Unterhalb des Headers */
+        left: 0;
+        background-color: var(--header-footer-bg);
+        width: 100%;
+        box-shadow: var(--box-shadow);
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding: 10px 0;
+        transform: translateY(-100%); /* Startet oberhalb des sichtbaren Bereichs */
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    nav ul.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        border-radius: 0;
+    }
+
+    .hamburger {
+        display: block; /* Hamburger-Icon anzeigen */
+    }
+
+    header .container {
+        flex-wrap: wrap; /* Logo und Hamburger nebeneinander, Nav darunter */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    .blog-grid, .gallery-album-grid, .gallery-grid, .blog-images-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    .blog-grid, .gallery-album-grid, .gallery-grid, .blog-images-grid {
+        grid-template-columns: 1fr; /* Eine Spalte auf sehr kleinen Bildschirmen */
+        gap: 15px;
+    }
+
+    .blog-preview-image, .album-cover img, .blog-images-grid img {
+        height: 180px;
+    }
+}

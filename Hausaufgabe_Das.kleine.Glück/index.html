@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Das kleine Glück - Graz Edition</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Das kleine Glück Logo">
+                <span>Das kleine Glück</span>
+            </div>
+            <nav>
+                <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Startseite</a></li>
+                    <li><a href="kalender.html">Kalender</a></li>
+                    <li><a href="briefkasten.html">Briefkasten</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Dein kleines Glück in Graz entdecken</h1>
+            <p>Finde versteckte Juwelen, erlebe Events und teile unvergessliche Momente.</p>
+        </section>
+
+        <section class="latest-blog-posts">
+            <h2>Aktuelle Entdeckungen</h2>
+            <div class="blog-grid">
+                <article class="blog-preview">
+                    <a href="blog_posts/architektur_oper.html">
+                        <div class="blog-preview-image">
+                            <img src="images/blog_thumbs/oper_thumb.jpg" alt="Grazer Oper">
+                        </div>
+                        <h3>Architektur in Graz - Die Grazer Oper</h3>
+                        <p>Ein architektonisches Juwel im Herzen von Graz, das nicht nur Opernliebhaber begeistert, sondern auch ein beeindruckendes Beispiel für historische Baukunst darstellt. Bestaune die prunkvolle Fassade und lass dich von ihrer Geschichte verzaubern.</p>
+                    </a>
+                </article>
+                <article class="blog-preview">
+                    <a href="blog_posts/architektur_eggenberg.html">
+                        <div class="blog-preview-image">
+                            <img src="images/blog_thumbs/eggenberg_thumb.jpg" alt="Schloss Eggenberg">
+                        </div>
+                        <h3>Architektur in Graz - Das Schloss Eggenberg</h3>
+                        <p>Tauche ein in die Welt des Barocks im Schloss Eggenberg, einem UNESCO-Weltkulturerbe. Ein Spaziergang durch die prunkvollen Säle und den weitläufigen Park ist wie eine Reise in eine andere Zeit.</p>
+                    </a>
+                </article>
+                <article class="blog-preview">
+                    <a href="blog_posts/architektur_uni_graz.html">
+                        <div class="blog-preview-image">
+                            <img src="images/blog_thumbs/uni_graz_thumb.jpg" alt="Universität Graz">
+                        </div>
+                        <h3>Architektur in Graz - Die Universität Graz</h3>
+                        <p>Nicht nur ein Zentrum des Wissens, sondern auch ein beeindruckendes architektonisches Ensemble. Entdecke die Vielfalt der Universitätsgebäude, die von historischen Bauten bis zu modernen Ergänzungen reichen.</p>
+                    </a>
+                </article>
+                <article class="blog-preview">
+                    <a href="blog_posts/architektur_herz_jesu.html">
+                        <div class="blog-preview-image">
+                            <img src="images/blog_thumbs/herz_jesu_thumb.jpg" alt="Herz Jesu Kirche Graz">
+                        </div>
+                        <h3>Architektur in Graz - Die Herz Jesu Kirche</h3>
+                        <p>Ein imposantes neugotisches Bauwerk, dessen Türme weit über die Dächer von Graz ragen. Bestaune die beeindruckende Architektur und die kunstvollen Details dieses spirituellen Wahrzeichens.</p>
+                    </a>
+                </article>
+                <article class="blog-preview">
+                    <a href="blog_posts/fruehling_rosenhain.html">
+                        <div class="blog-preview-image">
+                            <img src="images/blog_thumbs/rosenhain_thumb.jpg" alt="Kirschblüten Rosenhain">
+                        </div>
+                        <h3>Frühling in Graz - Kirschblütentraum am Rosenhain</h3>
+                        <p>Mitte April bis Anfang Mai verwandelt sich die Kirschallee am Rosenhain in ein zartrosa Blütenmeer – ein magischer Photospot und ideal für einen entspannten Nachmittag mit Café und Picknick auf der Wiese.</p>
+                    </a>
+                </article>
+                <article class="blog-preview">
+                    <a href="blog_posts/fruehling_schlossberg.html">
+                        <div class="blog-preview-image">
+                            <img src="images/blog_thumbs/schlossberg_fruehling_thumb.jpg" alt="Schlossberg Graz Frühling">
+                        </div>
+                        <h3>Frühling in Graz - Der Schlossberg ganz romantisch (und bunt)</h3>
+                        <p>Der Grazer Schlossberg ist im Frühling ein wahres Blütenparadies. Entdecke versteckte Pfade und bunte Blumenmeere, die den perfekten Rahmen für romantische Spaziergänge bieten. Ideal für Verliebte und alle, die es wieder werden wollen.</p>
+                    </a>
+                </article>
+                 <article class="blog-preview">
+                    <a href="blog_posts/fruehling_lend.html">
+                        <div class="blog-preview-image">
+                            <img src="images/blog_thumbs/lend_thumb.jpg" alt="Lendplatz Graz">
+                        </div>
+                        <h3>Frühling in Graz - Buntes Treiben im Stadtteil Lend</h3>
+                        <p>Der Lend ist jung, hip und immer in Bewegung! Besonders im Frühjahr lockt das Viertel mit lebhafter Atmosphäre, spannenden Events wie dem "Lendenwirbel" und einer bunten Mischung aus Kultur und Gastronomie. Ein Ort, der zum Verweilen und Entdecken einlädt.</p>
+                    </a>
+                </article>
+                <article class="blog-preview">
+                    <a href="blog_posts/sommer_schlosspark.html">
+                        <div class="blog-preview-image">
+                            <img src="images/blog_thumbs/schlosspark_thumb.jpg" alt="Schlosspark Eggenberg">
+                        </div>
+                        <h3>Sommer in Graz - Wo wenn nicht im Schlosspark</h3>
+                        <p>Der Schlosspark in Graz ist im Sommer eine grüne Oase der Ruhe und Erholung. Die weitläufigen Wiesen und alten Bäume laden zum Entspannen und Verweilen ein. Perfekt für ein Picknick oder einen entspannten Spaziergang abseits des städtischen Trubels.</p>
+                    </a>
+                </article>
+            </div>
+            <div class="text-center">
+                <a href="blog.html" class="button">Alle Blog-Einträge</a>
+            </div>
+        </section>
+
+        <section id="map-section" class="content-section">
+            <h2>Graz auf der Karte entdecken</h2>
+            <div id="map" style="height: 500px; border-radius: 8px; overflow: hidden;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Das kleine Glück. Alle Rechte vorbehalten.</p>
+            <p><a href="impressum.html">Impressum</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
