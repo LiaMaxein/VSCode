@@ -85,7 +85,8 @@ header .container {
 }
 
 .logo img {
-    height: 50px; /* Größe des Logos anpassen */
+    height: 60px; /* Größe des Logos anpassen */
+    width:auto;
     margin-right: 10px;
     transition: transform 0.3s ease;
 }
@@ -95,14 +96,15 @@ header .container {
 
 /* Navigation */
 nav {
-    position: relative; /* Für Hamburger-Menü */
+    position: relative; /* Wichtig für die Positionierung des Hamburgers und des Menüs */
 }
 
+/* Desktop Navigation Links */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; /* Standard: flex für Desktop-Layout (Links nebeneinander) */
 }
 
 nav ul li {
@@ -125,9 +127,9 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
-/* Hamburger-Menü für Mobilgeräte */
+/* Hamburger-Menü Icon */
 .hamburger {
-    display: none;
+    display: none; /* Standardmäßig ausgeblendet (wird in Media Query angezeigt) */
     background: none;
     border: none;
     font-size: 1.8rem;
@@ -136,6 +138,12 @@ nav ul li a.active {
     padding: 5px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    /* Positionierung des Icons relativ zum 'nav'-Container */
+    position: absolute;
+    right: 0; /* Rechts im 'nav'-Container */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; /* Sicherstellen, dass das Icon über dem Menü liegt */
 }
 
 .hamburger:hover {
@@ -169,6 +177,13 @@ main {
     padding: 2.5rem 0;
 }
 
+main#impressum {
+    max-width: 800px; /* Maximale Breite für den Inhalt */
+    margin: 40px auto; /* Zentriert den Inhalt und gibt oben/unten Abstand */
+    padding: 0 20px; /* Innenabstand, damit der Text nicht direkt am Rand klebt */
+    box-sizing: border-box; /* Stellt sicher, dass Padding in der Breite enthalten ist */
+}
+
 .hero {
     background: linear-gradient(135deg, var(--primary-heading-color) 0%, #6ab04c 100%);
     color: var(--white);
@@ -184,6 +199,7 @@ main {
     margin-bottom: 1.5rem;
     color: var(--white); /* Weiß für Hero-Überschrift */
 }
+
 
 .hero p {
     font-size: 1.3rem;
@@ -512,14 +528,17 @@ main {
 }
 
 .gallery-item .caption {
-    padding: 15px 10px;
-    font-weight: 600;
-    color: var(--text-color); /* Nutze die Variable */
-    font-size: 1.1em;
-    flex-grow: 1; /* Nimmt verfügbaren Platz ein */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Weiß mit leichter Transparenz */
+    color: #333;
+    padding: 5px 10px; /* Vertikal schmaler */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    min-height: auto; /* Stellt sicher, dass keine Mindesthöhe den Effekt beeinträchtigt */
 }
 
 
@@ -560,6 +579,46 @@ main {
     margin-bottom: 8px;
 }
 
+/* Zusätzliches Styling für Blog-Post-Bilder */
+.blog-post-detail .blog-single-image {
+    margin-bottom: 25px; /* Abstand nach dem ersten Bild */
+    text-align: center;
+}
+
+.blog-post-detail .blog-single-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Zusätzliches Styling fpr die Bilder im Blog-Post */
+.blog-post-detail .blog-inline-image {
+    float: right; /* Bild fließt rechts vom Text */
+    margin: 0 0 15px 20px; /* Abstand zum Text */
+    max-width: 40%; /* Bild nimmt max 40% der Breite ein */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.blog-post-detail .blog-inline-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Umfließen des Textes nach inline-Bildern wiederherstellen */
+.blog-post-detail p:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.blog-post-detail .blog-post-end-grid {
+    margin-top: 30px; /* Abstand nach dem Text */
+    /* Nutzt das bestehende blog-images-grid Layout */
+}
 .blog-images-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -614,48 +673,160 @@ a:focus, button:focus, input:focus, textarea:focus {
     border-radius: 4px;
 }
 
+/* Styling für den neuen Zurück-Button */
+.back-button {
+    position: absolute; /* Positioniert den Button absolut im Header */
+    left: 20px; /* Abstand vom linken Rand */
+    top: 50%; /* Zentriert vertikal */
+    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
+    font-size: 1.8em; /* Größe des Icons */
+    color: #fff; /* Farbe des Icons */
+    z-index: 1000; /* Stellt sicher, dass er über anderen Elementen liegt */
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #ffd700; /* Hover-Farbe */
+}
+
+/* Styling für das Wetter-Widget auf der Kalenderseite */
+.weather-widget {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.weather-widget h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.weather-widget .button-small {
+    display: inline-block;
+    background-color: #4CAF50; /* Grüne Farbe für den Button */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.weather-widget .button-small:hover {
+    background-color: #45a049;
+}
+
+.weather-widget .small-text {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Styling für die neue Lia-Seite */
+.about-lia {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.about-lia h1 {
+    margin-bottom: 30px;
+}
+
+.about-lia p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+}
+
+.about-lia-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.about-lia-images img {
+    width: 100%;
+    height: 250px; /* Feste Höhe für die Bilder */
+    object-fit: cover; /* Bilder füllen den Bereich aus und werden beschnitten */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 
 /* Responsive Styles (für Hamburger-Menü und allgemeine Anpassungen) */
+/* Responsive Styles (für Hamburger-Menü und allgemeine Anpassungen) */
 @media (max-width: 900px) {
-    nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 100%; /* Unterhalb des Headers */
-        left: 0;
-        background-color: var(--header-footer-bg);
-        width: 100%;
-        box-shadow: var(--box-shadow);
-        border-top: 1px solid rgba(0,0,0,0.1);
-        padding: 10px 0;
-        transform: translateY(-100%); /* Startet oberhalb des sichtbaren Bereichs */
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    /* Anzeige des Hamburger-Icons auf kleinen Bildschirmen */
+    .hamburger {
+        display: block;
     }
 
+    /* Anpassung des Header-Containers für mobile Ansicht */
+    header .container {
+        flex-wrap: nowrap; /* Verhindert das Umbrechen, Logo und Hamburger bleiben in einer Zeile */
+        justify-content: space-between; /* Logo und Hamburger bleiben an den Enden */
+    }
+
+    /* Mobile Navigation Links (das ausgeklappte Menüpanel) */
+    nav ul {
+        flex-direction: column; /* Links untereinander anordnen */
+        position: absolute;
+        top: 100%; /* Direkt unterhalb des Headers positionieren */
+        right: 0; /* Menü von rechts ein-/ausklappen */
+        left: auto; /* Stellt sicher, dass 'left' nicht überschrieben wird */
+        max-width: 280px; /* Maximale Breite des Menüpanels (kann angepasst werden) */
+        width: calc(100% - 40px); /* Damit es auf sehr kleinen Bildschirmen nicht über den Rand geht */
+        background-color: var(--white); /* Weißer Hintergrund wie gewünscht */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Deutlicherer Schatten für Tiefe */
+        border-radius: 0 0 8px 8px; /* Abgerundete untere Ecken */
+        padding: 10px 0; /* Innenabstand im Menüpanel */
+        transform: translateX(100%); /* Startet ausgeblendet rechts vom Bildschirmrand */
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Sanfte Ein-/Ausblend-Animation */
+        z-index: 999; /* Unter dem Hamburger-Icon, aber über dem Inhalt */
+    }
+
+    /* Zustand, wenn das Menü aktiv (ausgeklappt) ist */
     nav ul.active {
-        transform: translateY(0);
+        transform: translateX(0); /* Ins Blickfeld gleiten */
         opacity: 1;
         pointer-events: all;
     }
 
+    /* Listenelemente der Navigation im mobilen Menü */
     nav ul li {
-        margin: 0;
-        text-align: center;
+        margin: 0; /* Desktop-Margins entfernen */
+        width: 100%; /* Jedes Listenelement nimmt die volle Breite ein */
+        border-bottom: 1px solid var(--border-color); /* Trennlinien zwischen den Menüpunkten */
     }
 
+    /* Kein Trennstrich am letzten Element */
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    /* Links im mobilen Menü */
     nav ul li a {
-        display: block;
+        display: block; /* Gesamten Bereich anklickbar machen */
         padding: 12px 20px;
-        border-radius: 0;
+        border-radius: 0; /* Keine abgerundeten Ecken für volle Breite */
+        text-align: right; /* Text innerhalb des Menüs rechtsbündig ausrichten */
+        color: var(--text-color); /* Standard-Textfarbe */
     }
 
-    .hamburger {
-        display: block; /* Hamburger-Icon anzeigen */
-    }
-
-    header .container {
-        flex-wrap: wrap; /* Logo und Hamburger nebeneinander, Nav darunter */
+    /* Mobile spezifischer Hover- und Active-Stil */
+    nav ul li a:hover,
+    nav ul li a.active {
+        background-color: var(--light-bg); /* Dezenter Hintergrund beim Hover */
+        color: var(--link-hover-color); /* Akzentfarbe für den Text */
+        transform: none; /* Desktop-transform Effekt entfernen */
     }
 
     .hero h1 {
@@ -679,7 +850,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     }
 
     .blog-grid, .gallery-album-grid, .gallery-grid, .blog-images-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minminmax(250px, 1fr));
         gap: 20px;
     }
 }
@@ -721,4 +892,27 @@ a:focus, button:focus, input:focus, textarea:focus {
     .blog-preview-image, .album-cover img, .blog-images-grid img {
         height: 180px;
     }
+}
+
+    /* Media Queries für kleinere Bildschirme */
+@media (max-width: 768px) {
+    header .logo img {
+        height: 50px; /* Etwas kleiner auf Mobilgeräten */
+    }
+
+    .back-button {
+        font-size: 1.5em;
+        left: 10px;
+    }
+
+    .blog-post-detail .blog-inline-image {
+        float: none; /* Bild nicht mehr umfließen lassen auf kleinen Bildschirmen */
+        margin: 20px auto; /* Zentrieren */
+        max-width: 80%;
+    }
+
+    .about-lia-images {
+        grid-template-columns: 1fr; /* Eine Spalte auf kleinen Bildschirmen */
+    }
+
 }

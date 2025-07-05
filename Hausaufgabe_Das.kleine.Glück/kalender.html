@@ -10,15 +10,22 @@
 <body>
     <header>
         <div class="container">
+
             <div class="logo">
-                <img src="images/logo.png" alt="Das kleine Glück Logo">
+                <a href="lia_mxn.html" class="logo-image-link">
+                    <img src="images/logo.png" alt="Das kleine Glück Logo">
+                </a>
+
+                <a href="index.html" class="logo-text-link">
                 <span>Das kleine Glück</span>
+                </a>
             </div>
+
             <nav>
                 <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Startseite</a></li>
-                    <li><a href="kalender.html" class="active">Kalender</a></li>
+                    <li><a href="kalender.html">Kalender</a></li>
                     <li><a href="briefkasten.html">Briefkasten</a></li>
                     <li><a href="galerie.html">Galerie</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -29,18 +36,35 @@
     </header>
 
     <main class="container">
+          <a href="index.html" class="back-button-main" aria-label="Zurück zur Startseite"><i class="fas fa-arrow-left"></i></a>
         <section class="content-section">
             <h1>Veranstaltungskalender Graz</h1>
             <p>Entdecke die Highlights in und um Graz!</p>
 
+            <div class="weather-widget">
+                <h3>Wetter in Graz</h3>
+                <p>Aktuelle Wetterdaten könnten hier angezeigt werden, wenn eine Wetter-API verbunden ist.</p>
+                <p>Für detailliertere Informationen zum Wetter in Graz schau bei bergfex vorbei:</p>
+                <a href="https://www.bergfex.at/sommer/graz/wetter/" target="_blank" class="button-small">
+                    <i class="fas fa-cloud-sun"></i> Bergfex Wetter Graz
+                </a>
+                <p class="small-text">Dieser Link führt zu einer externen Wetterseite.</p>
+            </div>
+            <br>
+
             <div class="event-list">
                 <article class="event-item">
-                    <h3>10. Juli 2025: Styriarte - Unendliche Weiten</h3>
-                    <p><strong>Ort:</strong> Helmut List Halle, Graz</p>
-                    <p>Erlebe klassische Musik und faszinierende Klänge bei diesem besonderen Event der Styriarte.</p>
+                    <h3>05. Juli 2025: Sommer am Bergfestival</h3>
+                    <p><strong>Ort:</strong> Schlossberg, Graz</p>
+                    <p>Ein Open-Air-Festival mit regionalen Bands und DJs, perfekt, um den Sommerabend über den Dächern von Graz zu genießen.</p>
                 </article>
                 <article class="event-item">
-                    <h3>11. Juli 2025: ABBA</h3>
+                    <h3>08. Juli 2025: Jazz im Park</h3>
+                    <p><strong>Ort:</strong> Stadtpark Pavillon, Graz</p>
+                    <p>Kostenlose Jazzkonzerte im Grünen, ideal für einen entspannten Nachmittag.</p>
+                </article>
+                <article class="event-item">
+                    <h3>10. Juli 2025: ABBA - Tribute Night</h3>
                     <p><strong>Ort:</strong> Schlossbergbühne Kasematten, Graz</p>
                     <p>Ein Abend voller unvergesslicher Hits der schwedischen Pop-Legenden ABBA auf der malerischen Schlossbergbühne.</p>
                 </article>
